@@ -1,10 +1,11 @@
 module "aws-dev" {
   source = "../../infra"
   instancia = "t2.micro"
-  regiao_aws = "us-west-2"
+  regiao_aws = "us-east-2"
   chave = "IaC-DEV"
-}
-
-output "IP" {
-  value = module.aws-dev.IP_publico
+  grupoDeSeguranca = "Dev"
+  minimo = 0
+  maximo = 1
+  nomeGrupo = "Dev"
+  producao = false
 }
